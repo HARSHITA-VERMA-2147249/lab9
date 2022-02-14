@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="dark" ng-app="myApp" ng-controller="appointmentcntrl">
+        <h3 style="margin-top: 90px;"><i class="fa fa-users"></i>APPOINTMENT LIST</h3>
+        <center>
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th><input type="search" placeholder="Search name" ng-model="search.name" /></th>
+                        <th><input type="search" placeholder="Search email" ng-model="search.email" /></th>
+                    </tr>
+                    <tr>
+                        <th>Patient id</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="emp in r_list | filter:search">
+                        <td>{{emp.name}}</td>
+                        <td>{{emp.email }}</td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+</body>
+
+</html>
